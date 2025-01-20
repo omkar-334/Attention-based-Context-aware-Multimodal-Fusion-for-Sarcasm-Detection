@@ -5,8 +5,8 @@ import librosa
 import numpy as np
 from tqdm.auto import tqdm
 
-AUDIOS_FOLDER = "data/audio"
-AUDIO_FEATURES_PATH = "data/audio_features.p"
+AUDIOS_FOLDER = "data/audio"  # Input folder
+AUDIO_FEATURES_PATH = "data/audio_features.p"  # OUtput folder
 
 hop_length = 512  # Set the hop length; at 22050 Hz, 512 samples ~= 23ms
 margin_i, margin_v = 2, 4

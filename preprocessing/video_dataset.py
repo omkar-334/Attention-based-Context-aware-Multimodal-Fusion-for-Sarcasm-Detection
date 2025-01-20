@@ -8,11 +8,17 @@ import torch.utils.data
 
 
 class VideoDataset(torch.utils.data.Dataset):
-    FRAMES_DIR_PATH = "frames"
-    FEATURES_DIR_PATH = "features"
+    FRAMES_DIR_PATH = "frames"  # Input folder path
+    FEATURES_DIR_PATH = "features"  # Output fodler path
     FRAME_SAMPLE_RATE = 20  # Take every 20th frame
 
-    def __init__(self, video_id: str = None, transform: Callable = None, videos_data_path: str = "output.json", check_missing_videos: bool = False) -> None:
+    def __init__(
+        self,
+        video_id: str = None,
+        transform: Callable = None,
+        videos_data_path: str = "transcriptions.json",
+        check_missing_videos: bool = False,
+    ) -> None:
         self.transform = transform
         os.makedirs(self.FEATURES_DIR_PATH, exist_ok=True)
 
